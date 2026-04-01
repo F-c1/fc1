@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>موقعي الشخصي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: url("https://images-ext-1.discordapp.net/external/ZhOc_z8nJPT7Ud1hPJxeqw-zgH3kaGEELyrqrKc2SBg/https/tr.rbxcdn.com/180DAY-2cf33f964210d364771dfdb6653bc268/500/280/Image/Jpeg/noFilter?format=webp&width=623&height=350") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            animation: moveBg 20s ease-in-out infinite alternate;
+        }
+
+        /* حركة الخلفية */
+        @keyframes moveBg {
+            0% { background-position: center; }
+            25% { background-position: left top; }
+            50% { background-position: right top; }
+            75% { background-position: left bottom; }
+            100% { background-position: right bottom; }
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+        }
+
+        .discord-btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(230, 140, 6);
+            color: rgb(254, 254, 254);
+            width: 260px;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            transition: 0.3s;
+        }
+
+        .discord-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .discord-btn img {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            border-radius: 8px;
+        }
+
+        .counter {
+            margin-top: 25px;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+
+        .content-box {
+            background: rgba(0, 0, 0, 0.45);
+            padding: 30px;
+            border-radius: 20px;
+            width: fit-content;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <img src="https://images-ext-1.discordapp.net/external/nzcfi9qdX0A2bbFtxXcY7sDx8ipF5be52rVZPlnaYd8/https/tr.rbxcdn.com/180DAY-de18d08d48c2de4f206ab558649bbf46/150/150/Image/Png/noFilter?format=webp&width=188&height=188" class="avatar">
+
+        <h1>!  ᶠᶜ¹ •  D8kToR</h1>
+
+        <h3>مبرمج روبلوكس – ديسكورد – مواقع</h3>
+
+        <div class="discord-btn" onclick="window.open('https://discord.gg/fc1','_blank')">
+            <img src="https://images-ext-1.discordapp.net/external/nzcfi9qdX0A2bbFtxXcY7sDx8ipF5be52rVZPlnaYd8/https/tr.rbxcdn.com/180DAY-de18d08d48c2de4f206ab558649bbf46/150/150/Image/Png/noFilter?format=webp&width=188&height=188">
+            الدخول للسيرفر
+        </div>
+
+        <p style="margin-top:10px; font-size:18px;">الرتبة: Conser Ship</p>
+
+        <div class="counter">
+            عدد الزيارات: <span id="visits">0</span>
+        </div>
+    </div>
+
+    <script>
+        let visits = localStorage.getItem("visits");
+        if (!visits) visits = 0;
+        visits++;
+        localStorage.setItem("visits", visits);
+        document.getElementById("visits").innerText = visits;
+    </script>
+
+</body>
+</html>
